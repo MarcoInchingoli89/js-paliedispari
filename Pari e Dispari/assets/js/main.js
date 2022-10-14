@@ -5,49 +5,40 @@
 /* Istruzioni */
 
 //Chiedere con un prompt se l'utente sceglie pari o dispari
-prompt ('Giocatore scegli pari o dispari');
+const evenOddString = prompt ('Giocatore scegli pari o dispari');
 //Chiedere con un prompt numerico un numero da 1 a 5
 //Impostare una variabile
-const playerNumber = Number (prompt ('Ora scegli un numero da 1 a 5'));
+const playerNumber = Number( prompt('Ora scegli un numero da 1 a 5') );
 //Nella funzione generiamo un numero casuale per il computer con math floor e math random
 //Lo impostiamo in una variabile
 const cpuNumber = Math.floor(Math.random() *5);
-//Inserire il numero casuale in una costante per inserirla come paramentro nella funzione
-const isCpuNumber = randomCpuNumber(cpuNumber);
-//Creare una funzione dove prendiamo il valore casuale e lo salviamo con return
-function randomCpuNumber (numb) {
-    //Preleviamo il valore con return, ci servirà nella seconda funzione
-    return cpuNumber;
+//Facciamo la somma dei valori del giocatore e del computer in una funzione
+//Prendiamo la somma con return
+function sumToNumbers(numb1, numb2) {
+    const sum = numb1 + numb2;
+    return sum;
 }
-//Facciamo la somma dei valori del giocatore e del computer
-//Mettiamo la somma in una variabile
-const sum = playerNumber + cpuNumber;
-//Inserire la somma in una costante per inserirla come paramentro nella funzione
-const isEvenOrOdd = evenOdd (sum);
-let sumEvenOdd = false;
+//Salvo il valore di return in una costante
+const somma = sumToNumbers(playerNumber, cpuNumber);
+
+//Inserisco la somma come paramentro nella seconda funzione
+const isEvenOrOdd = evenOdd(somma);
+
 //Creare una seconda funzione per stabilire se la precedente somma dei due valori è pari o dispari
-function evenOdd (numb2) {
-    if (sum % 2 == 0) {
+function evenOdd(numb) {
+    let sumEvenOdd = false;
+
+    if (numb % 2 == 0) {
         sumEvenOdd = true;
-        return sumEvenOdd;
     } 
-    
+
+    return sumEvenOdd;
 }
 //A seconda del risultato stampiamo su console il vincitore con console.log
-if (sumEvenOdd) {
-    console.log('Il vincitore è pari');
+if (isEvenOrOdd) {
+    if (evenOddString === "pari");
+    console.log('Il vincitore è il giocatore');
 } else {
-    console.log('Il vincitore è dispari');
+    if (evenOddString === "dispari");
+    console.log('Il vincitore è il computer');
 }
-
-
-//Prendiamo la somma contenuta in una variabile e verifichiamo se è pari o dispari
-//Per vedere se è pari o dispari usiamo l'operatore modulo
-//In un ciclo If se la somma è divisibile per 2 è pari
-//In un ciclo If se la somma non divisibile per 2 è dispari
-
-//Crea un ciclo If
-//Se il risultato ottenuto è uguale all'input del giocatore, il giocatore è il vincitore
-//Se il risultato è diverso il vincitore è il computer
-//Altrimenti è un pareggio
-//A seconda del risultato stampiamo su console il vincitore con console.log
