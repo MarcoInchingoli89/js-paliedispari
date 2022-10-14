@@ -8,11 +8,16 @@ Chiedere all’utente di inserire una parola Creare una funzione per capire se l
 const userWord = prompt('Inserisci una parola');
 // Per verificare se una parola è palindroma controllare se una parola è uguale sia avanti che indietro
 
+//Per fare questo userò tre metodi:
+// Userò split per convertire una parola in un array di caratteri
+// Con reverse rovescerò i caratteri per verificare la parola da entrambi i lati
+// Con join andrò a riunire i caratteri rovesciati
+
 /* console.log(userWord); */
 //Impostiamo il parametro della funzione con la nostra variabile di input
-const wordOutput = Palindroma(userWord);
+const wordOutput = Palindrome(userWord);
 //Creiamo una funzione
-function Palindroma(word) {
+function Palindrome(word) {
     //Misuriamo la lunghezza delle parole usando lenght sul nostro input
     //Mettiamo la misura in una nuova costante
     const wordLenght = userWord.length;
