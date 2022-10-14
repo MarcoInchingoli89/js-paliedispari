@@ -24,10 +24,22 @@ function randomCpuNumber (numb) {
 const sum = playerNumber + cpuNumber;
 //Inserire la somma in una costante per inserirla come paramentro nella funzione
 const isEvenOrOdd = evenOdd (sum);
+let sumEvenOdd = false;
 //Creare una seconda funzione per stabilire se la precedente somma dei due valori è pari o dispari
 function evenOdd (numb2) {
+    if (sum % 2 == 0) {
+        sumEvenOdd = true;
+        return sumEvenOdd;
+    } 
     
 }
+//A seconda del risultato stampiamo su console il vincitore con console.log
+if (sumEvenOdd) {
+    console.log('Il vincitore è pari');
+} else {
+    console.log('Il vincitore è dispari');
+}
+
 
 //Prendiamo la somma contenuta in una variabile e verifichiamo se è pari o dispari
 //Per vedere se è pari o dispari usiamo l'operatore modulo
